@@ -115,6 +115,7 @@ class ChebSpec : public SolvSpec {
 	    // cout << "Initializing ChebSpec" << endl;
 	    // setN(20);
 	  }
+    ~ChebSpec(){}
 };
 
 void ChebSpec::setPotential(vector<Point> p) {

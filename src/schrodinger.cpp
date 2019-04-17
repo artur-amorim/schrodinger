@@ -88,6 +88,9 @@ List computeSpectrum(NumericVector px = NumericVector(),
   n->dEmin = dE;
   n->tol = tol;
   n->findSpectrum(nEigen);
-  return List::create(Named("energies") = getEnergies(n),
-                      Named("wfs") = getWavefunctions(n));
+  NumericVector energies = getEnergies(n) ;
+  List wfs = getWavefunctions(n) ;
+  delete n ;
+  return List::create(Named("energies") = energies,
+                      Named("wfs") = wfs);
 }

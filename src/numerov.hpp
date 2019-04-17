@@ -20,6 +20,7 @@ class Numerov : public SolvSpec {
 		void scanForZeroRanges(int nZeros) ;
 
 	public:
+    ~Numerov(){}
 		virtual void findSpectrum(int nEigen);
 };
 

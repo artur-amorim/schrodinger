@@ -33,6 +33,7 @@ class SolvSpec {
   	SolvSpec() {
   	  // cout << "Initializing spectral solver" << endl;
   	}
+		virtual ~SolvSpec(){}
 };
 
 vector<Point> SolvSpec::getPotential() {
