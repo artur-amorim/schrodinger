@@ -5,3 +5,12 @@
 src/*.o
 src/*.so
 src/*.dll
+
+# Ignore *.bin
+*.bin
+
+# Ignore tests folder
+tests/*
+
+# Ignore .ipch files
+*.ipch
