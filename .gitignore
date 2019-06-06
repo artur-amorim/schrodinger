@@ -6,6 +6,9 @@ src/*.o
 src/*.so
 src/*.dll
 
+# Ignore *.out
+*.out
+
 # Ignore *.bin
 *.bin
 

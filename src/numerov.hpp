@@ -94,9 +94,9 @@ double Numerov::diff(double E){
 
   	// now we have to find the log derivative at the matching point
   	double v1 = solRL[0].y;
-  	double d2 = ((25/12)*solLR[matchPointIndex].y-4*solLR[matchPointIndex-1].y+3*solLR[matchPointIndex-2].y-(4/3)* solLR[matchPointIndex-3].y+(1/4)* solLR[matchPointIndex-4].y);
+  	double d2 = ((25./12)*solLR[matchPointIndex].y-4*solLR[matchPointIndex-1].y+3*solLR[matchPointIndex-2].y-(4./3)* solLR[matchPointIndex-3].y+(1./4)* solLR[matchPointIndex-4].y);
   	double v2 = solLR[matchPointIndex].y;
-  	double d1 = -((25/12)*solRL[0].y-4*solRL[1].y+3*solRL[2].y-(4/3)*solRL[3].y+(1/4) * solRL[4].y);
+  	double d1 = -((25./12)*solRL[0].y-4*solRL[1].y+3*solRL[2].y-(4./3)*solRL[3].y+(1./4) * solRL[4].y);
 
   	double logDer = (d1 * v2 - d2 * v1) / h;
   	//logDer /= (ld1 * ld1 + ld2 * ld2);

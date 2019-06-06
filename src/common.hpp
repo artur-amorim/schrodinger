@@ -1,6 +1,8 @@
 #ifndef _COMMON_
 #define _COMMON_
 #include <vector>
+#include <cmath>
+#include <functional>
 
 using namespace std;
 
@@ -22,8 +24,7 @@ struct Point {
 };
 
 struct Range {
-	double eMin = 0;
-	double eMax = 1;
+	double eMin, eMax;
 	Range(double m0, double m1) {
 	    eMin = m0;
 	    eMax = m1;
@@ -64,16 +65,18 @@ struct Spectrum {
   vector<double> getEnergies() {
     vector<double> energies;
     for(int i = 0; i < modes.size(); i++)
+		{
       energies.push_back(modes[i].energy);
-
+		}
     return energies;
   }
 
-  vector<vector<Point>> getWavefunctions() {
-    vector<vector<Point>> wfs;
+  vector<vector<Point> > getWavefunctions() {
+    vector<vector<Point> > wfs;
     for(int i = 0; i < modes.size(); i++)
+		{
       wfs.push_back(modes[i].wavefunction);
-
+		}
     return wfs;
   }
 };
