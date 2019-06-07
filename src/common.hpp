@@ -51,32 +51,35 @@ struct Mode {
 
 struct Spectrum {
 	vector<Mode>  modes;
-	vector<Point> potential;
+	vector<vector<double> > potential;
 
 	void addMode(Mode m) {
    	modes.push_back(m);
 	}
 
-	void clear() {
-   	modes.clear();
-	  potential.clear();
+	void clear() 
+	{
+   		modes.clear();
+	  	potential.clear();
  	}
 
-  vector<double> getEnergies() {
+  vector<double> getEnergies()
+  {
     vector<double> energies;
     for(int i = 0; i < modes.size(); i++)
-		{
+	{
       energies.push_back(modes[i].energy);
-		}
+	}
     return energies;
   }
 
-  vector<vector<Point> > getWavefunctions() {
+  vector<vector<Point> > getWavefunctions()
+  {
     vector<vector<Point> > wfs;
     for(int i = 0; i < modes.size(); i++)
-		{
+	{
       wfs.push_back(modes[i].wavefunction);
-		}
+	}
     return wfs;
   }
 };

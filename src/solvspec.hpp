@@ -18,9 +18,9 @@ void SolvSpec::setPotential(const vector<double> &XX, const vector<double> &VV){
 	}
 	if(XX.size() > 1) 
 	{
-    X = XX;
+    	X = XX;
 		PotVals = VV;
-  } 
+  	} 
 	else 
 	{
 		cout << "Give more points to define the potential." << endl;
