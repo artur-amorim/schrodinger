@@ -1,5 +1,7 @@
 #ifndef _COMMON_
 #define _COMMON_
+
+#include <iostream>
 #include <vector>
 #include <cmath>
 #include <functional>
@@ -152,7 +154,7 @@ double zbrent(function<double(double)>& func, double x1, double x2, double tol, 
 			b += SIGN(tol1,xm);
 		fb = func(b);
 	}
-	cout<<"[WARN] Maximum number of iterations exceeded in zbrent, returning biggest value"<<endl;
+	cout << "[WARN] Maximum number of iterations exceeded in zbrent, returning biggest value"<< endl;
 	return x2;
 }
 
