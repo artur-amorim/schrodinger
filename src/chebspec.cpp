@@ -15,9 +15,9 @@ int ChebSpec::N = -1;
 int ChebSpec::L = 0;
 vector<double> ChebSpec::x = vector<double>();
 vector<vector<double> > ChebSpec::Tm = vector<vector<double> >();
-ChebSpec::TmInt = vector<vector<double> >();
-ChebSpec::D = vector<vector<double> >();
-ChebSpec::D2 = vector<vector<double> >();
+vector<vector<double> > ChebSpec::TmInt = vector<vector<double> >();
+vector<vector<double> > ChebSpec::D = vector<vector<double> >();
+vector<vector<double> > ChebSpec::D2 = vector<vector<double> >();
 
 ChebSpec::ChebSpec(){}
 
