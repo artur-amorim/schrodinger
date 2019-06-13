@@ -1,10 +1,10 @@
-#ifndef _CHEBSPEC_HPP
-#define _CHEBSPEC_HPP
+#ifndef _CHEBSPEC_CPP_
+#define _CHEBSPEC_CPP_
 
 #include <armadillo>
 
+#include "solvspec.cpp"
 #include "../include/chebspec.h"
-#include "../src/solvspec.hpp"
 
 using namespace std;
 using namespace arma;

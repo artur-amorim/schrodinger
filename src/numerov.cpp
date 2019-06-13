@@ -1,8 +1,8 @@
-#ifndef _NUMEROV_
-#define _NUMEROV_
+#ifndef _NUMEROV_CPP_
+#define _NUMEROV_CPP_
 
 #include "../include/numerov.h"
-#include "../src/solvspec.hpp"
+//#include "../src/solvspec.cpp"
 
 
 Numerov::Numerov(){}
@@ -109,7 +109,7 @@ void Numerov::scanForZeroRanges(int nZeros)
 		}
 		lastDiff = newDiff;
 		// just in case we hit a zero, which is not so unlikely to happen
-		if(abs(lastDiff) < 1e-8) 
+		if(fabs(lastDiff) < 1e-8) 
     {
 		    Range range(E - 1e-8, E + 1e-8);
 		    zeros.push_back(range);

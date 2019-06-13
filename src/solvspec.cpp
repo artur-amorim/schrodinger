@@ -1,10 +1,9 @@
-#ifndef _SOLVSPEC_HPP
-#define _SOLVSPEC_HPP
+#ifndef _SOLVSPEC_CPP_
+#define _SOLVSPEC_CPP_
 
 #include <iostream>
 #include <fstream>
 #include "../include/solvspec.h"
-#include "common.hpp"
 
 using namespace std;
 
@@ -30,13 +29,12 @@ void SolvSpec::setPotential(const vector<double> &XX, const vector<double> &VV){
   nPoints = XX.size() ;
   xMin    = XX.front() ;
   xMax    = XX.back() ;
-	h = (xMax - xMin) / nPoints;
-
-	// Now we define the object that will be used
-	// to compute the potential at any x
-	double yder1 = (VV[0] - VV[1]) / (XX[0] - XX[1]) ;
-	double yder2 = (VV[nPoints-1] - VV[nPoints-2]) / (XX[nPoints-1] - XX[nPoints-2]) ;
-	potFunc = Spline_Interp<double>(XX, VV, yder1, yder2);
+  h = (xMax - xMin) / nPoints;
+  // Now we define the object that will be used
+  // to compute the potential at any x
+  double yder1 = (VV[0] - VV[1]) / (XX[0] - XX[1]) ;
+  double yder2 = (VV[nPoints-1] - VV[nPoints-2]) / (XX[nPoints-1] - XX[nPoints-2]) ;
+  potFunc = Spline_Interp<double>(XX, VV, yder1, yder2);
 
 }
 

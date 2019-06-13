@@ -1,6 +1,3 @@
-#ifndef _SCHRODINGER_CPP_
-#define _SCHRODINGER_CPP_
-
 #include <string>
 #include "../include/schrodinger.h"
 #include "chebspec.cpp"
@@ -82,6 +79,3 @@ List computeSpectrum(const vector<double> &px , const vector<double> &py,
   delete n ;
   return List(energies, wavefuncs) ;
 }
-
-;
-#endif
