@@ -13,8 +13,11 @@ const double PI = 3.141592653589793;
 
 int ChebSpec::N = -1;
 int ChebSpec::L = 0;
-vector<double> ChebSpec::x = {};
-vector<vector<double> > ChebSpec::Tm = {}, ChebSpec::TmInt = {}, ChebSpec::D = {}, ChebSpec::D2 = {};
+vector<double> ChebSpec::x = vector<double>();
+vector<vector<double> > ChebSpec::Tm = vector<vector<double> >();
+ChebSpec::TmInt = vector<vector<double> >();
+ChebSpec::D = vector<vector<double> >();
+ChebSpec::D2 = vector<vector<double> >();
 
 ChebSpec::ChebSpec(){}
 
@@ -108,7 +111,7 @@ void ChebSpec::findSpectrum(int nEigen)
   // now we just need to put everything in our internal format
   // finally safelly add all the modes found to the spectrum (already in a nice way)
   spectrum.clear();
-  spectrum.potential = {X, PotVals};
+  spectrum.potential.push_back(X); spectrum.potential.push_back(PotVals);
   for (int i = 0; i < nEigen; i++) 
   {
     // build the wavefunction
@@ -163,6 +166,7 @@ void ChebSpec::showMatrix(double* A, int Nr)
 
 ChebSpec::~ChebSpec(){}
 
+// [[Rcpp::export]]
 void chebSetN(int n) 
 {
   if(ChebSpec::N == n)

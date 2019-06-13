@@ -1,2 +1,2 @@
-PKG_CXXFLAGS = -g -O3 -std=c++11
+CXX_STD = CXX11
 PKG_LIBS = -lblas -llapack -larmadillo
